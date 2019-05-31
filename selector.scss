@@ -1,0 +1,8 @@
+.listRight {
+    .container & {
+        & a:hover {
+            color: red;
+        }
+    }
+}
+

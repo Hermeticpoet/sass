@@ -1,0 +1,148 @@
+.main {
+    .wrapper & {
+        background-color: yellow;
+        width: 300px;
+        height: 300px;
+    }
+}
+
+p {
+    font: {
+        family: open-sans;
+        size: 30px;
+        weight: 500;
+    }
+    
+    text: {
+        align: center;
+        transform: uppercase;
+    }
+}
+
+%backgroundImage {
+    background: {
+        size: cover;
+        position: center center;
+        repeat: no-repeat;
+    }
+}
+
+div {
+    @extend %backgroundImage;
+}
+
+.container {
+    background-image: url("https://dummyimage.com/450x250/foo/fff");
+}
+
+.article {
+    background-image: url("https://dummyimage.com/450x250/ooo/fff");
+}
+
+.post {
+    background-image: url("https://dummyimage.com/450x250/ddd/fff");
+}
+
+@function pxToEm($value, $base) {
+    @return ($value / $base) + em;
+}
+
+h1 {
+    font-size: pxToEm(32, 16);
+}
+
+$colors: (
+    black: #000000,
+    red: #e84610,
+    green: #bada55
+);
+
+@each $key, $value in $colors {
+    .item-#{$key} {
+        background-color: $value;
+    }
+}
+
+$class: container;
+
+div.#{$class} {
+    background-color: orange;
+}
+
+$class-name: item;
+
+@for $i from 1 through 4 {
+    .#{$class-name}-#{$i} {
+        width: 60px + $i;
+    }
+}
+
+h1 {
+    @if 1  + 1 == 2 {
+        border: 1px solid black;
+    }
+}
+
+$random: 5;
+
+h2 {
+    @if $random > 5 {
+        color: blue;
+    } @else if $random == 3 {
+        color: yelllow;
+    } @else {
+        color: purple;
+    }
+}
+
+@mixin button($color, $size) {
+    width: $size;
+    height: $size / 2;
+    border: 1px solid $color;
+    
+    @if $color == #e84610 {
+        color: #fff;
+    } @else {
+        color: $color;
+    }
+}
+
+.btn {
+    @include button(#e84610, 200px)
+}
+
+@mixin unicornify() {
+    background-color: pink;
+    color: white;
+    @content; /*--- content to get replaced by these new styles ---*/
+    font-size: 30px;
+    font-weight: bold;
+}
+
+p {
+    @include unicornify {
+        border: 1px solid pink;
+        border-radius: 100%;
+        text-align: center;
+}
+
+
+/**************************
+    separator
+**************************/
+
+$colors: black, red, blue, green, pink, purple;
+
+@mixin boxes($size, $baseColor) {
+    @for $i from 1 through 30 {
+        .box-#{$i} {
+            width: $size;
+            height: $size / 2;
+            background-color: rgb($i * ($baseColor + 15), $i * ($baseColor + 10), $i * ($baseColor + 5));
+        }
+    }
+}
+
+@include boxes(50px, 10);
+
+

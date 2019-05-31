@@ -1,0 +1,44 @@
+.container-1 {
+  background-color: #aaa; }
+
+.container-2 {
+  background-color: #bbb; }
+
+.container-3 {
+  background-color: #ccc; }
+
+.container-4 {
+  background-color: #ddd; }
+
+.container-5 {
+  background-color: #eee; }
+
+.container-6 {
+  background-color: #fff; }
+
+/*------ ------*/
+.container-#aaa {
+  background-color: "#aaa"; }
+
+.container-#bbb {
+  background-color: "#bbb"; }
+
+.container-#ccc {
+  background-color: "#ccc"; }
+
+.container-#ddd {
+  background-color: "#ddd"; }
+
+/*------ ------*/
+.icon-save {
+  background-image: url("/images/save.png"); }
+
+.icon-cancel {
+  background-image: url("/images/cancel.png"); }
+
+.icon-help {
+  background-image: url("/images/help.png"); }
+
+/*------ ------*/
+
+/*# sourceMappingURL=container-class.css.map */

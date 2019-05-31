@@ -1,0 +1,34 @@
+$colors: #aaa, #bbb, #ccc, #ddd, #eee, #fff;
+
+@each $color in $colors {
+    $i: index($colors, $color);
+    .container-#{$i} {
+        background-color: $color;
+    }
+}
+
+/*------ ------*/
+
+@each $color in "#aaa", "#bbb", "#ccc", "#ddd" {
+    .container-#{$color} {
+        background-color: $color;
+    }
+}
+
+/*------ ------*/
+
+@each $name in 'save' 'cancel' 'help' {
+    .icon-#{$name} {
+        background-image: url('/images/#{$name}.png');
+    }
+}
+
+/*------ ------*/
+
+$refcolors: #55A46A, #9BD385, #D9EA79, #E4EE77, #F2E975, #F2D368, #F0AB55, #ED7943, #EA4E38, #E80D19;
+
+@for $i from 1 through length($refcolors) {
+    $c: nth($refcolors, $i);
+
+    // ... do something fancy with $c
+}
